@@ -29,9 +29,13 @@ Shared files: `assets/css/site.css`, `assets/js/site.js`, `assets/fonts/`, `img/
 
 The form emails enquiries to the address in `ENQUIRY_EMAIL` at the top of the form code in `assets/js/site.js`, through FormSubmit (formsubmit.co). Visitors can also send the same enquiry on WhatsApp. To change the address, edit `ENQUIRY_EMAIL`; the first enquiry to a new address triggers an activation email that must be confirmed.
 
-## After changing CSS or JavaScript
+## Photos, styles and scripts load from jsDelivr
 
-Pages link to `site.css?v=N` and `site.js?v=N`. When you change either file, raise `N` in every page's links so browsers fetch the new version instead of a cached one.
+GitHub Pages serves large files slowly in India, so pages load photos, CSS, JS and fonts from jsDelivr, a free CDN that mirrors this repo, pinned to a commit. After adding or changing a photo, `site.css` or `site.js`:
+
+1. `python3 tools/cdn.py --webp` to make WebP sizes of any new photos.
+2. Commit and push those files.
+3. `python3 tools/cdn.py` to point every page at that commit, then commit and push the pages.
 
 ## Blog
 

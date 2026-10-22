@@ -72,6 +72,10 @@ def rewrite(commit):
                 if os.path.exists(os.path.join(ROOT, wf)):
                     cands.append(f'{asset_url(wf)} {width_of(wf)}w')
             tag = re.sub(r'\s(srcset|sizes)="[^"]*"', '', tag)
+            biggest = max([int(c.rsplit(' ', 1)[1][:-1]) for c in cands], default=0)
+            full_w = width_of(rel)
+            if cands and full_w > biggest:
+                cands.append(f'{asset_url(rel)} {full_w}w')  # full-size JPEG for wide, high-density screens
             if cands:
                 hero = 'fetchpriority="high"' in tag
                 sizes = '100vw' if hero else '(max-width: 640px) 100vw, 640px'
