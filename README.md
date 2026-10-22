@@ -28,3 +28,7 @@ Shared files: `assets/css/site.css`, `assets/js/site.js`, `assets/fonts/`, `img/
 ## Enquiry form
 
 The form emails enquiries to the address in `ENQUIRY_EMAIL` at the top of the form code in `assets/js/site.js`, through FormSubmit (formsubmit.co). Visitors can also send the same enquiry on WhatsApp. To change the address, edit `ENQUIRY_EMAIL`; the first enquiry to a new address triggers an activation email that must be confirmed.
+
+## After changing CSS or JavaScript
+
+Pages link to `site.css?v=N` and `site.js?v=N`. When you change either file, raise `N` in every page's links so browsers fetch the new version instead of a cached one.
