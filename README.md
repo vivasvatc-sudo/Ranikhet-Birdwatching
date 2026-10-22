@@ -27,4 +27,4 @@ Shared files: `assets/css/site.css`, `assets/js/site.js`, `assets/fonts/`, `img/
 
 ## Enquiry form
 
-The form opens WhatsApp with the visitor's answers filled in. To receive enquiries by email instead, connect a form service such as Formspree and change the form handler in `assets/js/site.js`.
+The form emails enquiries to the address in `ENQUIRY_EMAIL` at the top of the form code in `assets/js/site.js`, through FormSubmit (formsubmit.co). Visitors can also send the same enquiry on WhatsApp. To change the address, edit `ENQUIRY_EMAIL`; the first enquiry to a new address triggers an activation email that must be confirmed.
