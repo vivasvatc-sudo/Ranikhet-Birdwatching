@@ -476,3 +476,16 @@ a.btn:hover { filter: brightness(0.92); }
 .pace-option:has(input:checked) > span { background: var(--forest-600) !important; color: #fff !important; border-color: var(--forest-600) !important; }
 .form-status { font-size: 14px; color: var(--text-muted); margin-top: 10px; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---- phone header: menu on its own full-width row ---- */
+@media (max-width: 640px) {
+  .site-header-row { flex-wrap: wrap !important; row-gap: 2px !important; }
+  .site-nav {
+    order: 3; flex: 1 0 100% !important; justify-content: space-between !important;
+    margin: 0 !important; overflow: visible !important;
+    border-top: 1px solid var(--border-subtle); padding-top: 2px;
+  }
+  .site-nav a { padding: 10px 2px !important; font-size: 15px !important; }
+  .site-nav .nav-home { display: none !important; }
+  .site-header-cta a { padding: 10px 18px !important; font-size: 15px !important; }
+}
