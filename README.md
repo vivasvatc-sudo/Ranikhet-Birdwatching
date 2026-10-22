@@ -32,3 +32,7 @@ The form emails enquiries to the address in `ENQUIRY_EMAIL` at the top of the fo
 ## After changing CSS or JavaScript
 
 Pages link to `site.css?v=N` and `site.js?v=N`. When you change either file, raise `N` in every page's links so browsers fetch the new version instead of a cached one.
+
+## Blog
+
+Posts live in `blog/<post-slug>/index.html`, and `blog/index.html` lists them newest first. To add a post, copy an existing post folder, change its text, title, description, canonical link and BlogPosting schema, add a card to the top of `blog/index.html`, and add the URL to `sitemap.xml`.
